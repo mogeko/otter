@@ -1,0 +1,12 @@
+[package]
+name = "otter-core"
+version = "0.0.1"
+authors = ["Mogeko <zhengjunyi@live.com>"]
+description = "The core library of otter"
+homepage = "https://github.com/mogeko/otter/tree/master/crates/cli"
+repository = "https://github.com/mogeko/otter/tree/master/crates/cli"
+readme = "README.md"
+license = "MIT"
+edition = "2021"
+
+[dependencies]

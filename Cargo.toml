@@ -1,0 +1,19 @@
+[package]
+name = "otter"
+version = "0.0.1"
+authors = ["Mogeko <zhengjunyi@live.com>"]
+description = "A flexible and efficient HTTP proxy"
+homepage = "https://github.com/mogeko/otter"
+repository = "https://github.com/mogeko/otter"
+readme = "README.md"
+license = "MIT"
+edition = "2021"
+
+[[bin]]
+path = "crates/cli/src/main.rs"
+name = "otter"
+
+[workspace]
+members = ["crates/*"]
+
+[dependencies]
