@@ -1,12 +1,13 @@
 [package]
 name = "otter-cli"
 version = "0.0.1"
-authors = ["Mogeko <zhengjunyi@live.com>"]
 description = "The command line interface for otter"
 homepage = "https://github.com/mogeko/otter/tree/master/crates/cli"
 repository = "https://github.com/mogeko/otter/tree/master/crates/cli"
 readme = "README.md"
-license = "MIT"
-edition = "2021"
+
+[[bin]]
+path = "src/main.rs"
+name = "otter"
 
 [dependencies]

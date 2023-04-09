@@ -9,7 +9,3 @@ version = "0.0.1"
 [[package]]
 name = "otter-cli"
 version = "0.0.1"
-
-[[package]]
-name = "otter-core"
-version = "0.0.1"
