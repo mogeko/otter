@@ -2,6 +2,7 @@
 members = ["crates/*"]
 
 [workspace.package]
+version = "0.0.1"
 authors = ["Mogeko <zhengjunyi@live.com>"]
 edition = "2021"
 license = "MIT"

@@ -1,3 +1,13 @@
-pub fn pass() {
-    "Hello, world!".to_string();
+pub fn hello() -> &'static str {
+    "Hello, world!"
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(hello(), "Hello, world!");
+    }
 }

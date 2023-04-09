@@ -1,9 +1,16 @@
 [package]
 name = "otter"
-version = "0.0.1"
-description = "The core library of otter"
+description = "A flexible and efficient HTTP proxy"
 homepage = "https://github.com/mogeko/otter/tree/master/crates/core"
 repository = "https://github.com/mogeko/otter/tree/master/crates/core"
 readme = "README.md"
 
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+
 [dependencies]
+tokio = { version = "1.27", features = ["full"] }
