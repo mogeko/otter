@@ -27,3 +27,16 @@ impl Settings {
             .try_deserialize()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_new() {
+        match Settings::new().unwrap().bind {
+            None => assert!(true),
+            _ => assert!(false),
+        }
+    }
+}
