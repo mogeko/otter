@@ -275,9 +275,17 @@ name = "otter"
 version = "0.0.1"
 dependencies = [
  "config",
+ "otter_http",
  "otter_wg",
  "serde",
  "tokio",
+]
+
+[[package]]
+name = "otter_http"
+version = "0.0.1"
+dependencies = [
+ "serde",
 ]
 
 [[package]]

@@ -5,16 +5,8 @@ use serde::Deserialize;
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
 enum Proxy {
-    HTTP(HTTP),
-    WG(otter_wg::Config),
-}
-
-#[derive(Debug, Deserialize)]
-#[allow(unused)]
-struct HTTP {
-    tunnel: Option<Vec<Proxy>>,
-    addr: String,
-    port: u16,
+    HTTP(otter_http::Settings<Proxy>),
+    WG(otter_wg::Settings),
 }
 
 #[derive(Debug, Deserialize)]

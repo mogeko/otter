@@ -17,3 +17,4 @@ config = "0.13"
 # Internal
 otter = { path = "crates/core" }
 otter_wg = { path = "crates/wg" }
+otter_http = { path = "crates/http" }

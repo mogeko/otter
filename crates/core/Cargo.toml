@@ -17,3 +17,4 @@ config.workspace = true
 serde.workspace = true
 
 otter_wg.workspace = true
+otter_http.workspace = true
