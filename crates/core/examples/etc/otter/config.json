@@ -1,8 +1,8 @@
 {
-  "bind": [
+  "binds": [
     {
       "type": "http",
-      "tunnel": [
+      "tunnels": [
         { "type": "http", "addr": "1.1.1.1", "port": 56002 },
         {
           "type": "wg",

@@ -4,15 +4,23 @@ use serde::Deserialize;
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
-enum Proxy {
-    HTTP(otter_http::Config<Proxy>),
-    WG(otter_wg::Config),
+enum Bind {
+    HTTP(otter_http::InboundConfig<Tunnel>),
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "lowercase", tag = "type")]
+#[allow(unused)]
+enum Tunnel {
+    HTTP(otter_http::OutboundConfig),
+    WG(otter_wg::OutboundConfig),
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
 pub struct Config {
-    bind: Option<Vec<Proxy>>,
+    #[serde(default)]
+    binds: Vec<Bind>,
 }
 
 impl Config {
@@ -24,15 +32,18 @@ impl Config {
     }
 }
 
+impl Default for Config {
+    fn default() -> Self {
+        Self { binds: vec![] }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_new() {
-        match Config::new("").unwrap().bind {
-            None => assert!(true),
-            _ => assert!(false),
-        }
+        assert!(Config::new("").is_ok());
     }
 }
