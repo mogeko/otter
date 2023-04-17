@@ -1,4 +1,4 @@
-mod settings;
+mod config;
 
 use clap::Parser;
 
@@ -14,7 +14,7 @@ struct Args {
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
-    let _config = settings::Settings::new(&args.config).unwrap();
+    let _config = config::Config::new(&args.config).unwrap();
 
     println!("{}", otter::hello());
 }

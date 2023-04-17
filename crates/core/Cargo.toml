@@ -13,9 +13,9 @@ rust-version.workspace = true
 
 [dependencies]
 clap = { version = "4.2", features = ["derive"] }
+config_rs = { version = "0.13", package = "config" }
 
 tokio.workspace = true
-config.workspace = true
 serde.workspace = true
 
 otter_wg.workspace = true

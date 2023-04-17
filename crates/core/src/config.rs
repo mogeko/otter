@@ -1,23 +1,23 @@
-use config::{Config, ConfigError, File};
+use config_rs::{ConfigError, File};
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
 enum Proxy {
-    HTTP(otter_http::Settings<Proxy>),
-    WG(otter_wg::Settings),
+    HTTP(otter_http::Config<Proxy>),
+    WG(otter_wg::Config),
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-pub struct Settings {
+pub struct Config {
     bind: Option<Vec<Proxy>>,
 }
 
-impl Settings {
+impl Config {
     pub fn new(path: &str) -> Result<Self, ConfigError> {
-        Config::builder()
+        config_rs::Config::builder()
             .add_source(File::with_name(path).required(false))
             .build()?
             .try_deserialize()
@@ -30,7 +30,7 @@ mod tests {
 
     #[test]
     fn test_new() {
-        match Settings::new("").unwrap().bind {
+        match Config::new("").unwrap().bind {
             None => assert!(true),
             _ => assert!(false),
         }
