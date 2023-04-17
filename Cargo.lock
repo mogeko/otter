@@ -90,6 +90,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "otter-wg"
+version = "0.0.1"
+
+[[package]]
 name = "parking_lot"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

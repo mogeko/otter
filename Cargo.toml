@@ -7,3 +7,10 @@ authors = ["Mogeko <zhengjunyi@live.com>"]
 edition = "2021"
 license = "MIT"
 rust-version = "1.68"
+
+[workspace.dependencies]
+tokio = { version = "1.27", features = ["full"] }
+
+# Internal
+otter = { path = "crates/core" }
+otter_wg = { path = "crates/wg" }

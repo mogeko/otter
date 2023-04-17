@@ -1,8 +1,8 @@
 [package]
-name = "otter"
+name = "otter-wg"
 description = "A flexible and efficient HTTP proxy"
-homepage = "https://github.com/mogeko/otter/tree/master/crates/core"
-repository = "https://github.com/mogeko/otter/tree/master/crates/core"
+homepage = "https://github.com/mogeko/otter/tree/master/crates/wg"
+repository = "https://github.com/mogeko/otter/tree/master/crates/wg"
 readme = "README.md"
 
 version.workspace = true
@@ -12,4 +12,3 @@ license.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-tokio.workspace = true
