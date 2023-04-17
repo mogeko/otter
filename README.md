@@ -1,2 +1,3 @@
 # otter
-A flexible and efficient HTTP proxy.
+
+🦦A flexible and efficient HTTP proxy.

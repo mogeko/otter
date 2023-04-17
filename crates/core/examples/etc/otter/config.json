@@ -1,0 +1,19 @@
+{
+  "binds": [
+    {
+      "type": "http",
+      "tunnels": [
+        { "type": "http", "addr": "1.1.1.1", "port": 56002 },
+        {
+          "type": "wg",
+          "addr": "1.1.1.2",
+          "port": 8002,
+          "priv_key": "AAAA",
+          "pub_key": "BBBB"
+        }
+      ],
+      "addr": "127.0.0.1",
+      "port": 56001
+    }
+  ]
+}

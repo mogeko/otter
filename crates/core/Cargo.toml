@@ -1,0 +1,22 @@
+[package]
+name = "otter"
+description = "A flexible and efficient HTTP proxy"
+homepage = "https://github.com/mogeko/otter/tree/master/crates/core"
+repository = "https://github.com/mogeko/otter/tree/master/crates/core"
+readme = "README.md"
+
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+clap = { version = "4.2", features = ["derive"] }
+config_rs = { version = "0.13", package = "config" }
+
+tokio.workspace = true
+serde.workspace = true
+
+otter_wg.workspace = true
+otter_http.workspace = true
