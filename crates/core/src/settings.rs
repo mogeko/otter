@@ -25,8 +25,12 @@ pub struct Settings {
 
 impl Settings {
     pub fn new() -> Result<Self, ConfigError> {
+        Settings::from("/etc/otter/config")
+    }
+
+    pub fn from(path: &str) -> Result<Self, ConfigError> {
         Config::builder()
-            .add_source(File::with_name("examples/config.json").required(false))
+            .add_source(File::with_name(path).required(false))
             .build()?
             .try_deserialize()
     }
