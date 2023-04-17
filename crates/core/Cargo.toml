@@ -12,6 +12,8 @@ license.workspace = true
 rust-version.workspace = true
 
 [dependencies]
+clap = { version = "4.2", features = ["derive"] }
+
 tokio.workspace = true
 config.workspace = true
 serde.workspace = true

@@ -1,7 +1,3 @@
-mod settings;
-
-pub use settings::Settings;
-
 pub fn hello() -> &'static str {
     "Hello, world!"
 }

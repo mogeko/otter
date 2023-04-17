@@ -16,11 +16,7 @@ pub struct Settings {
 }
 
 impl Settings {
-    pub fn new() -> Result<Self, ConfigError> {
-        Settings::from("/etc/otter/config")
-    }
-
-    pub fn from(path: &str) -> Result<Self, ConfigError> {
+    pub fn new(path: &str) -> Result<Self, ConfigError> {
         Config::builder()
             .add_source(File::with_name(path).required(false))
             .build()?
@@ -34,7 +30,7 @@ mod tests {
 
     #[test]
     fn test_new() {
-        match Settings::new().unwrap().bind {
+        match Settings::new("").unwrap().bind {
             None => assert!(true),
             _ => assert!(false),
         }
