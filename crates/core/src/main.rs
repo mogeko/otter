@@ -7,14 +7,15 @@ use clap::Parser;
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Path to the configuration file
-    #[arg(short, long, default_value = "/etc/otter/config")]
+    #[arg(short, long, default_value = "./config.json")]
     config: String,
 }
 
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
-    let _config = config::Config::new(&args.config).unwrap();
+    let config = config::Config::new(&args.config).unwrap();
 
     println!("{}", otter::hello());
+    println!("{:?}", config);
 }
