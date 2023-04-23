@@ -5,15 +5,15 @@ use serde::Deserialize;
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
 enum Listener {
-    HTTP(otter_http::InboundConfig),
+    HTTP(otter_http::ListenerConfig),
 }
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
 enum Endpoint {
-    HTTP(otter_http::OutboundConfig),
-    WG(otter_wg::OutboundConfig),
+    HTTP(otter_http::EndpointConfig),
+    WG(otter_wg::EndpointConfig),
 }
 
 #[derive(Debug, Deserialize)]
