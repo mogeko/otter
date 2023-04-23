@@ -2,8 +2,7 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-pub struct InboundConfig<T> {
-    tunnels: Vec<T>,
+pub struct InboundConfig {
     addr: String,
     port: u16,
 }

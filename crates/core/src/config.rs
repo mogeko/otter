@@ -4,14 +4,14 @@ use serde::Deserialize;
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
-enum Bind {
-    HTTP(otter_http::InboundConfig<Tunnel>),
+enum Listener {
+    HTTP(otter_http::InboundConfig),
 }
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase", tag = "type")]
 #[allow(unused)]
-enum Tunnel {
+enum Endpoint {
     HTTP(otter_http::OutboundConfig),
     WG(otter_wg::OutboundConfig),
 }
@@ -20,7 +20,8 @@ enum Tunnel {
 #[allow(unused)]
 pub struct Config {
     #[serde(default)]
-    binds: Vec<Bind>,
+    listener: Vec<Listener>,
+    endpoint: Vec<Endpoint>,
 }
 
 impl Config {
@@ -34,7 +35,10 @@ impl Config {
 
 impl Default for Config {
     fn default() -> Self {
-        Self { binds: vec![] }
+        Self {
+            listener: vec![],
+            endpoint: vec![],
+        }
     }
 }
 

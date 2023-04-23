@@ -1,0 +1,9 @@
+[[listener]]
+type = "http"
+addr = "1.1.1.1"
+port = 56001
+
+[[endpoint]]
+type = "http"
+addr = "1.1.1.1"
+port = 56002
