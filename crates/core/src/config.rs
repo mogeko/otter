@@ -17,9 +17,9 @@ enum Endpoint {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(default)]
 #[allow(unused)]
 pub struct Config {
-    #[serde(default)]
     listener: Vec<Listener>,
     endpoint: Vec<Endpoint>,
 }
