@@ -25,9 +25,15 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(path: &str) -> Result<Self, ConfigError> {
+    pub fn new(_path: &str) -> Result<Self, ConfigError> {
+        let global_config = std::path::Path::new("/etc/otter/config.toml");
+        let home_config = dirs::home_dir().unwrap().join(".config/otter/config.toml");
+        let user_config = std::path::Path::new(_path);
+
         config_rs::Config::builder()
-            .add_source(File::with_name(path).required(false))
+            .add_source(File::from(global_config).required(false))
+            .add_source(File::from(home_config).required(false))
+            .add_source(File::from(user_config).required(false))
             .build()?
             .try_deserialize()
     }
