@@ -12,7 +12,7 @@ license.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-clap = { version = "4.2", features = ["derive"] }
+clap = { version = "4.3", features = ["derive"] }
 config_rs = { version = "0.13", package = "config" }
 
 tokio.workspace = true
